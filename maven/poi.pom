@@ -22,7 +22,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi</artifactId>
-    <version>@VERSION@</version>
+    <version>5.0.0-allow-negative-conditionals</version>
     <packaging>jar</packaging>
     <name>Apache POI</name>
     <url>https://poi.apache.org/</url>
