@@ -163,6 +163,7 @@ public class CellFormatPart {
     interface PartHandler {
         String handlePart(Matcher m, String part, CellFormatType type,
                 StringBuffer desc);
+        void updatePositions(int pos, int offset);
     }
 
     /**
@@ -533,12 +534,14 @@ public class CellFormatPart {
             int pos = 0;
             while ((pos = fmt.indexOf("''", pos)) >= 0) {
                 fmt.delete(pos, pos + 2);
+                partHandler.updatePositions(pos, -2);
             }
 
             // Now the final pass for quoted chars: Replace any \u0000 with ''
             pos = 0;
             while ((pos = fmt.indexOf("\u0000", pos)) >= 0) {
                 fmt.replace(pos, pos + 1, "''");
+                partHandler.updatePositions(pos, 1);
             }
         }
 
