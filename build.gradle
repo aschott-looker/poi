@@ -301,6 +301,7 @@ project('ooxml') {
     compileJava.dependsOn 'ant-compile-ooxml-xsds'
 
     dependencies {
+        compile 'org.apache.poi:poi-ooxml-full:5.0.0'
         compile "org.apache.xmlbeans:xmlbeans:${xmlbeansVersion}"
         compile 'org.apache.commons:commons-collections4:4.4'
         compile "org.apache.commons:commons-math3:${commonsMathVersion}"
